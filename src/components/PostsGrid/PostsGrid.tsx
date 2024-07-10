@@ -2,7 +2,6 @@ import PostsCard from '../PostsCard/PostsCard'
 import styles from './PostsGrid.module.css'
 
 //Usar isto
-
 const post = {
     "postImage": "https://example.com/image1.jpg",
     "categories": [
@@ -19,7 +18,7 @@ const post = {
 
 const posts = [
     {
-        "postImage": "https://example.com/image1.jpg",
+        "postImage": "/src/assets/posts/unsplash_dEGu-oCuB1Y.png",
         "categories": [
             "Google",
             "Trending",
@@ -32,7 +31,7 @@ const posts = [
         "link": "/blog/link1"
     },
     {
-        "postImage": "https://example.com/image2.jpg",
+        "postImage": "/src/assets/posts/unsplash_hHdHCfAifHU.png",
         "categories": [
             "Tech",
             "Innovation",
@@ -45,7 +44,7 @@ const posts = [
         "link": "/blog/link2"
     },
     {
-        "postImage": "https://example.com/image3.jpg",
+        "postImage": "/src/assets/posts/unsplash_tVEqStC2uz8.png",
         "categories": [
             "Health",
             "Wellness",
@@ -62,7 +61,20 @@ const posts = [
 function PostsGrid() {
     return (
         <div className={styles.postGrid}>
-            <PostsCard />
+
+            {posts.map((post) => {
+                return <PostsCard
+                    title={post.title}
+                    postImage={post.postImage}
+                    summary={post.summary}
+                    categories={post.categories}
+                    link={post.link}
+                    numberOfComments={post.comments}
+                    publishDate={post.postDate}
+                />
+            })
+            }
+
         </div>
     )
 }

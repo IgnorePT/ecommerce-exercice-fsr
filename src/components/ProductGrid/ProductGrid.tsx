@@ -1,3 +1,4 @@
+import { Icon } from '@iconify/react/dist/iconify.js'
 import ProductCard from './ProductCard/ProductCard'
 import styles from './ProductGrid.module.css'
 
@@ -123,28 +124,44 @@ const products = [
     }
 ]
 
+//  
 
 function ProductGrid() {
 
     return (
-        <div className={styles.wrapper}>
-            {
-                products.map((product) => {
-                    return (
-                        <ProductCard
-                            productName={product.name}
-                            image={product.productImg}
-                            description={product.description}
-                            oldPrice={product.oldPrice}
-                            currentPrice={product.currentPrice}
-                            variantColors={product.colors}
-                        />
-                    )
-                })
-            }
+        <>
+            <div className={styles.listStyle}>
+                <Icon className={styles.muted} icon="mingcute:grid-fill" height="2.4rem" />
+                <Icon className={styles.muted} icon="mingcute:list-check-line" height="2.4rem" />
+            </div>
+            <div className={styles.wrapper}>
+                {
+                    products.map((product) => {
+                        return (
+                            <ProductCard
+                                productName={product.name}
+                                image={product.productImg}
+                                description={product.description}
+                                oldPrice={product.oldPrice}
+                                currentPrice={product.currentPrice}
+                                variantColors={product.colors}
+                            />
+                        )
+                    })
+                }
 
-        </div>
+            </div>
+        </>
     )
 }
+
+React.createElement("div", {}, [
+    React.createElement(),
+    React.createElement()
+    React.createElement()
+    React.createElement()
+    React.createElement()
+
+])
 
 export default ProductGrid
